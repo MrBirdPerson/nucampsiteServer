@@ -89,7 +89,7 @@ favoriteRouter.route('/:campsiteId')
     res.statusCode = 403;
     res.end('PUT operation not supported on /favorites/:campsiteId');
 })
-.delete(cors.corsWithOptionsm, authenticate.verifyUser, (req, res, next) => {
+.delete(cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => {
     Favorite.findOne({ user: req.user._id })
     .then(favorite => {
         if(favorite) {
